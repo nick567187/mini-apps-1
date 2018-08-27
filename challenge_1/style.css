@@ -1,0 +1,27 @@
+td {
+width:120px;
+height:120px;
+text-align: center;
+font-size: 100px;
+}
+
+table {
+table-layout: fixed;
+margin-top: 10px;
+width:400px;
+height:400px;
+white-space:nowrap;
+}
+
+button {
+margin-top: 10px;
+margin-left: 240px;
+}
+
+#wintext {
+position:absolute;
+right:120px;
+top:300px;
+font-size:50px;
+display:none;
+}
