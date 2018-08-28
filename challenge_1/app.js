@@ -115,6 +115,10 @@ var isWinningCombo = function (board) {
 var turnHandler = function(player, event) {
   event.target.innerHTML = player.move;
   player.board[event.target.parentElement.id][event.target.cellIndex] = 1;
+  // model.playedBoard[event.target.parentElement.id][event.target.cellIndex] = 1; 
+  // rotate(player.board); 
+  // rotate(model.playedBoard);
+
   if(isWinningCombo(player.board)) {
     view.wintext.innerHTML = player.name + ' Wins!';
     view.wintext.style.display = 'block';
@@ -159,6 +163,18 @@ var resetAllBoards = function() {
     }
   }
 };
+
+
+// var rotate = function(board) {
+//   board.reverse();
+//   for(var i = 0; i < board.length; i++) {
+//     for(var j = 0; j < i; j++) {
+//       var temp = board[i][j];
+//       board[i][j] = board[j][i];
+//       board[j][i] = temp;
+//     }
+//   }
+// }
 
 //---table click functionality
 view.table.addEventListener('click', clickHandler);

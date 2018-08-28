@@ -8,14 +8,17 @@ font-size: 100px;
 table {
 table-layout: fixed;
 margin-top: 10px;
-width:400px;
+width:350px;
 height:400px;
 white-space:nowrap;
+position:absolute;
 }
 
 button {
+position:absolute;
+top:510px;
 margin-top: 10px;
-margin-left: 240px;
+margin-left: 200px;
 }
 
 #wintext {
