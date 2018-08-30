@@ -1,0 +1,59 @@
+#title {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#checkout {
+  bottom: 300px;
+  position: absolute;
+  width:100px;
+  height:40px;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+}
+
+span {
+  display: inline-block;
+  width: 70px;
+}
+
+#address1, #address2 {
+width:220px;
+}
+
+#State, #Expiry{
+width: 25px;
+margin-right: 20px;
+}
+
+#Zip {
+width:60px;
+margin-left:-40px;
+
+}
+
+#City {
+width: 180px;
+}
+
+#CVV {
+width:20px;
+margin-left:-25px;
+}
+
+#Credit {
+width:170px;
+}
+
+.confirmation {
+padding-left:10px;
+}
+
+.key {
+margin-left: 10px;
+display: inline-block;
+}
+
