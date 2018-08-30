@@ -22,7 +22,6 @@ app.post('/form1', function(req,res) {
   });
 });
 
-
 app.post('/form2', function(req,res) {
   var address1 = req.body['Address Line 1']
   var address2 = req.body['Address Line 2']
@@ -69,7 +68,8 @@ db.connect(function(err) {
   console.log('You are now connected to the database');
 })
 
-db.query("CREATE TABLE IF NOT EXISTS shop ( id INT auto_increment, Name VARCHAR(30), Email VARCHAR(40), Password VARCHAR(30), AddressLine1 VARCHAR(40), AddressLine2 VARCHAR(40), City VARCHAR(20), State VARCHAR(20), ZipCode VARCHAR(13), PhoneNumber VARCHAR(20), CreditCard VARCHAR(25), ExpiryDate VARCHAR(10), CVV VARCHAR(10), BillingZipCode VARCHAR(10), PRIMARY KEY (id))", function(err) {
+db.query("CREATE TABLE IF NOT EXISTS shop ( id INT auto_increment, Name VARCHAR(30), Email VARCHAR(40), Password VARCHAR(30), AddressLine1 VARCHAR(40), AddressLine2 VARCHAR(40), City VARCHAR(20), State VARCHAR(20), ZipCode VARCHAR(13), PhoneNumber VARCHAR(20), CreditCard VARCHAR(25), ExpiryDate VARCHAR(10), CVV VARCHAR(10), BillingZipCode VARCHAR(10), PRIMARY KEY (id))", function(err, result) {
   if(err) { throw err; }
+  console.log(result);
 });
 
