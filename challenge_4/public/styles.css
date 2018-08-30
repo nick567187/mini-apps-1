@@ -1,0 +1,16 @@
+
+
+span {
+  margin:2px;
+  display:inline-block;
+  width:80px;
+  height:80px;
+  background:white;
+  border-radius:50%;
+}
+
+#board {
+    padding: 10px;
+    width: 590px;
+    background: #ffef96;
+}
