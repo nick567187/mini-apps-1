@@ -18,8 +18,6 @@ class App extends React.Component {
   }
 
   matchRows(x,y) {
-    console.log('x', x)
-    console.log('y', y)
     var red = 0; 
     var blue = 0; 
     for(var i = 0; i < 7; i++) {
@@ -58,17 +56,16 @@ class App extends React.Component {
     var red = 0; 
     var blue = 0; 
     var i = x;
-      for(var j = y; j > 0; j--) {
-        
-        if(i+1 <= 7 && j-1 >= 0) {
-          if(this.state.board[j-1][i+1] === 'red') {
+      for(var j = 0; j < 6; j++) {
+        if(i >= 0 && j+y < 6) {
+          if(this.state.board[j+y][i] === 'red') {
             red++;
           }
-          if(this.state.board[j-1][i+1] === 'blue') {
+          if(this.state.board[j+y][i] === 'blue') {
             blue++;
           }
         }
-        i++;
+        i--;
         
       }
       if(red === 3 || blue === 3) {
@@ -92,8 +89,6 @@ class App extends React.Component {
         }
         i++;
       }
-      console.log('red', red);
-      console.log('blue', blue)
       if(red === 3 || blue === 3) {
         return true;
       }
@@ -102,13 +97,12 @@ class App extends React.Component {
 
   checkWin(x,y) {
     if(this.matchRows(x,y) || this.matchColumns(x,y) || this.matchMajorDiagonal(x,y) || this.matchMinorDiagonal(x,y)) {
-      alert('you win')
+      setTimeout(() => alert('YOU WIN'), 10);
     }
     return false;
   }
 
   addMove(x,y) {
-    
     for(var i = 5; i >= 0; i--) {
       if(this.state.board[i][x] === null) {
         var newValue =  i;
@@ -120,22 +114,23 @@ class App extends React.Component {
       var newBoard = prevState.board
       if(newBoard[newValue][x] === null) {
         if(prevState.turn) {
-          newBoard[newValue][x] = 'red'
+          newBoard[newValue][x] = 'red';
         } else {
-          newBoard[newValue][x] = 'blue'
+          newBoard[newValue][x] = 'blue';
         }
       }
       return {
         board: newBoard,
         turn: !prevState.turn
       }
-    
     });
-    this.checkWin(x,newValue);
+    
+   this.checkWin(x,newValue);
   }
 
 
   render() {
+    
     var boardArray = [];
     for(var i = 0; i < 6; i++) {
       boardArray.push([]);

@@ -11,7 +11,6 @@ class Square extends React.Component {
       this.color = 'gray';
     } else if(this.props.value === 'red') {
       this.color = 'red'
-  
     } else {
       this.color = 'blue'
     }
